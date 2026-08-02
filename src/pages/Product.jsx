@@ -1,7 +1,22 @@
+import { Card } from "../components/Card";
+import { ProductData } from "../data/ProductData";
+
 export const Product = () => {
-    return (
-        <>
-            <h2>Hello this is product page</h2>
-        </>
-    )
-}
+  return (
+    <div className="container mt-5">
+      <h1>Products</h1>
+
+      <div className="row">
+        {ProductData.map((item) => (
+          <div className="col-md-3 mb-4" key={item.id}>
+            <Card
+              title={item.title}
+              description={item.description}
+              price={item.price}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

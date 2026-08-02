@@ -1,19 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-import { Products } from "../data/Products";
-
+import { routes } from "../data/Routes";
 
 export const AppRoutes = () => {
   return (
-    <>
     <Routes>
-      {Products.map((page) => (
+      {routes.map((route) => (
         <Route
-          key={page.id}
-          path={page.path}
-          element={page.element}
+          key={route.id}
+          path={route.path}
+          element={route.element}
         />
       ))}
     </Routes>
-    </>
   );
 };
