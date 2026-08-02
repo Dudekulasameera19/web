@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Carousel } from "../components/Carousel";
 import { Card } from "../components/Card";
 import { ProductData } from "../data/ProductData";
+import { Footer } from "../components/Footer";
+import { Cart } from "./Cart";
 export const Home = () => {
     return (
         <>
@@ -50,6 +52,22 @@ export const Home = () => {
             </nav>
 
             <Carousel />
+            <div className="container mt-5">
+                <div className="row">
+                    {ProductData.map((item) => (
+                        <div className="col-md-4 mb-4" key={item.id}>
+                            <Card
+                                title={item.title}
+                                description={item.description}
+                                price={item.price}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+
+            <Footer />
 
         </>
     );
